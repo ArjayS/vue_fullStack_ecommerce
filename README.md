@@ -33,3 +33,5 @@ Setup at @ 9:30
 @28:35,
 
 - We will now start implementing more specific data for each of our page using provided files and fake json data files.
+
+STOP AT @30:10
