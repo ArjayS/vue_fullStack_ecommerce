@@ -34,4 +34,6 @@ Setup at @ 9:30
 
 - We will now start implementing more specific data for each of our page using provided files and fake json data files.
 
-@31:10, Working on the views pages that we have, CartPage.vue, ProductDetailPage.vue, ProductsPage.vue
+@31:10, Working on the views pages that we have, CartPage.vue, ProductDetailPage.vue, ProductsPage.vue, and App.vue by adding some styling
+
+@33:10, Working on ProductsPage.vue
