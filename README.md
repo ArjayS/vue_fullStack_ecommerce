@@ -10,6 +10,9 @@ Setup at @ 9:30
 
 - Within the 'fsv-front-end' directory, type "npm run serve" to see your Vue app running on localhost.
 
+NOTE:
+in vscode during work, use 'yarn dev' to run the app and see the website
+
 @18:30,
 
 - Add Router for multi-page viewing using 'npm add router'.
