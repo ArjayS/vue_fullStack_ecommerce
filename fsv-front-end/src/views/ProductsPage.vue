@@ -1,12 +1,14 @@
 <template>
-  <h1>This is the Products Page</h1>
+  <h1>{{ title }}</h1>
 </template>
 
 <script>
 export default {
   name: "ProductsPage",
   data() {
-    return {};
+    return {
+      title: "Hello Everyone!",
+    };
   },
 };
 </script>
