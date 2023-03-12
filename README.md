@@ -40,3 +40,9 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @31:10, Working on the views pages that we have, CartPage.vue, ProductDetailPage.vue, ProductsPage.vue, and App.vue by adding some styling
 
 @33:10, Working on ProductsPage.vue
+
+@35:00, Continue working on the ProductsPage.vue by adding and looping throught the products fake data and also adding router-link
+
+- @40:30 explaining why Router-link is better than the <a></a> anchor tag. Router-link allows you to navigate through pages without doing a full-page refresh, which this improves users experience and performance because we do not need to reload and refresh a page everytime we change a page
+
+@41:45, Working on the ProductDetailsPage.vue
