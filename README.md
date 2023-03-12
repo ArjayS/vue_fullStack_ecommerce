@@ -45,4 +45,10 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 - @40:30 explaining why Router-link is better than the <a></a> anchor tag. Router-link allows you to navigate through pages without doing a full-page refresh, which this improves users experience and performance because we do not need to reload and refresh a page everytime we change a page
 
-@41:45, Working on the ProductDetailsPage.vue
+@41:45, Working on the ProductDetailPage.vue
+
+@43:00, Explaining the `product: products.find((p) => p.id === this.$route.params.id)`
+
+@43:30, Continue working on ProductDetailPage.vue
+
+@47:30, Working on CartPage.vue
