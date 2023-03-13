@@ -52,3 +52,7 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @43:30, Continue working on ProductDetailPage.vue
 
 @47:30, Working on CartPage.vue
+
+@54:00, Adding totalPrice using the computed property method added in the data() from the CartPage.vue component
+
+@55:40, Finished up with the 3 Main Component views for our ecommerce site
