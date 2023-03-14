@@ -61,4 +61,6 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 @58:50, Adding the NavBar.vue component to the App.vue main file component
 
-@1:01:45, Making a 404 page to be able to display error if a user goes to a non-existing endpoint. By creating a NotFoundPage.vue views page
+@1:01:45, Making a 404 page to be able to display error if a user goes to a non-existing endpoint. By creating a NotFoundPage.vue views page.
+
+@1:05:15, Also, make the NotFoundPage show for a specific :id / :url endpoint for a product by working on the ProductDetailPage.vue
