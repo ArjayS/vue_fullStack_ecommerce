@@ -60,3 +60,5 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @55:45, Working on properly setting up the navigation bar
 
 @58:50, Adding the NavBar.vue component to the App.vue main file component
+
+@1:01:45, Making a 404 page to be able to display error if a user goes to a non-existing endpoint.
