@@ -68,3 +68,5 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @1:08:00, Split out the grid in the products page to separate re-usable components. By creating ProductsGrid.vue and ProductsGridItem.vue This is where we are introducing props
 
 @1:18:30, Breaking down the CartPage.vue component as a Challenge
+
+@1:26:15, Building the Backend using NodeJS
