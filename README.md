@@ -56,3 +56,7 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @54:00, Adding totalPrice using the computed property method added in the data() from the CartPage.vue component
 
 @55:40, Finished up with the 3 Main Component views for our ecommerce site
+
+@55:45, Working on properly setting up the navigation bar
+
+@58:50, Adding the NavBar.vue component to the App.vue main file component
