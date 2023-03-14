@@ -64,3 +64,7 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @1:01:45, Making a 404 page to be able to display error if a user goes to a non-existing endpoint. By creating a NotFoundPage.vue views page.
 
 @1:05:15, Also, make the NotFoundPage show for a specific :id / :url endpoint for a product by working on the ProductDetailPage.vue
+
+@1:08:00, Split out the grid in the products page to separate re-usable components. By creating ProductsGrid.vue and ProductsGridItem.vue This is where we are introducing props
+
+@1:18:30, Breaking down the CartPage.vue component as a Challenge
