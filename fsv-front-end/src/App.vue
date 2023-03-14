@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <NavBar />
+    <!-- router-view displays all the necessary page in the router index.js path -->
     <router-view />
   </div>
 </template>
