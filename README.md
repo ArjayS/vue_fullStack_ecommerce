@@ -72,3 +72,7 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @1:26:15, Building the Backend using NodeJS. Instruction on how to install it. Also, explaining the use of ExpressJS
 
 @1:27:20, Creating a directory for our backend called, fsv-back-end. Then doing, 'npm init -y'
+
+@1:28:25, Installing package we will need for our backend: ExpressJS, (development packages 'npm install --save-dev') Babel (@babel/core) (@babel/node) (@babel/preset-env) (@babel/cli) (@babel/plugin-transform-runtime), (installing for production) @babel/runtime and creating a new folder called 'src' and within that creating a file called, server.js. After installing everything regarding babel we will create a new file in the root directory called .babelrc, and fill in the necessary object code in
+
+@1:32:30, Writing a bit of [modern jsvascript code with the help of babel packages] server.js
