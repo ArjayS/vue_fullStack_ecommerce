@@ -78,3 +78,5 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @1:32:30, Writing a bit of [modern jsvascript code with the help of babel packages] server.js. How to run the initial server.js code is 'npx babel-node src/server.js'. Then go to localhost:8000/hello.
 
 @1:36:10, Developing the back-end first is better than developing the front-end (same as my experience). Introducing postman.com to communicate with the backend. We have to download and install the program for postman tool. Working with postman.
+
+@1:40:20, Installing a package called body-parser, for Express to be able to parse the body (npm install body-parser). We then need to add some code in the server.js file
