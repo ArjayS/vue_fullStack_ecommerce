@@ -80,3 +80,11 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @1:36:10, Developing the back-end first is better than developing the front-end (same as my experience). Introducing postman.com to communicate with the backend. We have to download and install the program for postman tool. Working with postman.
 
 @1:40:20, Installing a package called body-parser, for Express to be able to parse the body (npm install body-parser). We then need to add some code in the server.js file
+
+@1:41:00, Communicating postman to the our running server @ localhost:8000 by setting up the POST request in our server.js file
+
+(EXERCISE FILES > CH02 > 02_04 > Start)
+
+@1:42:30, Introducing more ways of communicating to our server
+
+@1:43:00, Express allows us to use url parameters
