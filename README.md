@@ -69,4 +69,6 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 @1:18:30, Breaking down the CartPage.vue component as a Challenge
 
-@1:26:15, Building the Backend using NodeJS
+@1:26:15, Building the Backend using NodeJS. Instruction on how to install it. Also, explaining the use of ExpressJS
+
+@1:27:20, Creating a directory for our backend called, fsv-back-end. Then doing, 'npm init -y'
