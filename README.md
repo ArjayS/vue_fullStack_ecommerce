@@ -75,4 +75,6 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 @1:28:25, Installing package we will need for our backend: ExpressJS, (development packages 'npm install --save-dev') Babel (@babel/core) (@babel/node) (@babel/preset-env) (@babel/cli) (@babel/plugin-transform-runtime), (installing for production) @babel/runtime and creating a new folder called 'src' and within that creating a file called, server.js. After installing everything regarding babel we will create a new file in the root directory called .babelrc, and fill in the necessary object code in
 
-@1:32:30, Writing a bit of [modern jsvascript code with the help of babel packages] server.js
+@1:32:30, Writing a bit of [modern jsvascript code with the help of babel packages] server.js. How to run the initial server.js code is 'npx babel-node src/server.js'. Then go to localhost:8000/hello.
+
+@1:36:10, Developing the back-end first is better than developing the front-end (same as my experience). Introducing postman.com to communicate with the backend. We have to download and install the program for postman tool. Working with postman.
