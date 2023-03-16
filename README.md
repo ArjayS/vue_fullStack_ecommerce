@@ -88,3 +88,7 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @1:42:30, Introducing more ways of communicating to our server
 
 @1:43:00, Express allows us to use url (/:id -> ie. /users/123/cart) parameters through GET request and us inputing the :id to deliver to the server.
+
+@1:45:50, (EXERCISE FILES > CH02 > 02_05 > Start)
+
+@1:46:20, Creating a database through json object and an array of objects
