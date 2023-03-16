@@ -108,3 +108,5 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @2:00:10, Fifth endpoint is for removing items in the cart
 
 @2:02:00, Testing the two new routes (adding and removing an item) in postman
+
+@2:03:30, Talking about and installing MongoDB
