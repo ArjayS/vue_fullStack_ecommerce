@@ -153,6 +153,20 @@ app.get("/api/products/:productId", (req, res) => {
   }
 });
 
+// @1:57:30, Fourth endpoint for adding an item on a cart, which the client will send a req.body
+app.post("/api/users/:userId/cart", (req, res) => {
+  const { productId } = req.body;
+  const product = products.find((product) => product.id === productId);
+  if (product) {
+    cartItems.push(product);
+    res.status(200).json(cartItems);
+  } else {
+    res.status(404).json("Could not find the product!");
+  }
+});
+
+// @2:00:10, Fifth endpoint is for removing items in the cart
+
 // Server listening to PORT = 8000
 app.listen(8000, () => {
   console.log("Server is listening on port 8000");
