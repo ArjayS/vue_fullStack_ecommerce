@@ -100,3 +100,5 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @1:51:00, Defining the third endpoint for getting a single specific products
 
 @1:52:30, Testing our 3 endpoints through postman
+
+@1:54:30, Installing Nodemon (development install, npm install --save-dev nodemon). Change the command to run the server from 'npx babel-node src/server' to 'npx nodemon --exec npx babel-node src/server.js'
