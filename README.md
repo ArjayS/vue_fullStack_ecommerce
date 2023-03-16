@@ -92,3 +92,5 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @1:45:50, (EXERCISE FILES > CH02 > 02_05 > Start)
 
 @1:46:20, Creating a database through json object and an array of objects
+
+@1:48:30, Defining the first endpoint for getting all the products
