@@ -132,6 +132,11 @@ app.get("/hello/:name", (req, res) => {
   res.send(`Hello ${req.params.name}!`);
 });
 
+// @1:48:30, First endpoint for getting all the products
+app.get("/api/products", (req, res) => {
+  res.status(200).json(products);
+});
+
 // Server listening to PORT = 8000
 app.listen(8000, () => {
   console.log("Server is listening on port 8000");
