@@ -137,6 +137,11 @@ app.get("/api/products", (req, res) => {
   res.status(200).json(products);
 });
 
+// @1:48:30, Second endpoint for getting all of a specific users cart products
+app.get("/api/users/:userId/cart", (req, res) => {
+  res.status(200).json(cartItems);
+});
+
 // Server listening to PORT = 8000
 app.listen(8000, () => {
   console.log("Server is listening on port 8000");
