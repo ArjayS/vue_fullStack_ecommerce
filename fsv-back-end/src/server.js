@@ -145,7 +145,7 @@ app.get("/api/users/:userId/cart", (req, res) => {
 // @1:51:00, Third endpoint for getting a single specific products
 app.get("/api/products/:productId", (req, res) => {
   const { productId } = req.params;
-  const product = products.find(product.id === productId);
+  const product = products.find((product) => product.id === productId);
   if (product) {
     res.status(200).json(product);
   } else {
