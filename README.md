@@ -87,4 +87,4 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 @1:42:30, Introducing more ways of communicating to our server
 
-@1:43:00, Express allows us to use url parameters
+@1:43:00, Express allows us to use url (/:id -> ie. /users/123/cart) parameters through GET request and us inputing the :id to deliver to the server.
