@@ -142,6 +142,17 @@ app.get("/api/users/:userId/cart", (req, res) => {
   res.status(200).json(cartItems);
 });
 
+// @1:51:00, Third endpoint for getting a single specific products
+app.get("/api/products/:productId", (req, res) => {
+  const { productId } = req.params;
+  const product = products.find(product.id === productId);
+  if (product) {
+    res.status(200).json(product);
+  } else {
+    res.status(404).json("Could not find the product!");
+  }
+});
+
 // Server listening to PORT = 8000
 app.listen(8000, () => {
   console.log("Server is listening on port 8000");
