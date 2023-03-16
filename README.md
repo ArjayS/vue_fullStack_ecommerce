@@ -106,3 +106,5 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @1:57:30, Continue writing endpoints, Fourth endpoint for adding an item on a cart, which the client will send a req.body
 
 @2:00:10, Fifth endpoint is for removing items in the cart
+
+@2:02:00, Testing the two new routes (adding and removing an item) in postman
