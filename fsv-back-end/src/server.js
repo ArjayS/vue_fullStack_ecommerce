@@ -166,6 +166,11 @@ app.post("/api/users/:userId/cart", (req, res) => {
 });
 
 // @2:00:10, Fifth endpoint is for removing items in the cart
+app.delete("/api/users/:userId/cart/:productId", (req, res) => {
+  const { productId } = req.params;
+  cartItems = cartItems.filter((product) => product.id !== productId);
+  res.status(200).json(cartItems);
+});
 
 // Server listening to PORT = 8000
 app.listen(8000, () => {
