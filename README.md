@@ -94,3 +94,5 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @1:46:20, Creating a database through json object and an array of objects
 
 @1:48:30, Defining the first endpoint for getting all the products
+
+@1:49:25, Defining the second endpoint for getting all the products by a specific user in there cart
