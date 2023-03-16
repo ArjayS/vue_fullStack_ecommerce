@@ -98,3 +98,5 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @1:49:25, Defining the second endpoint for getting all the products by a specific user in there cart
 
 @1:51:00, Defining the third endpoint for getting a single specific products
+
+@1:52:30, Testing our 3 endpoints through postman
