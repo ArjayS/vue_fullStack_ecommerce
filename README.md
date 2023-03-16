@@ -102,3 +102,7 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @1:52:30, Testing our 3 endpoints through postman
 
 @1:54:30, Installing Nodemon (development install, npm install --save-dev nodemon). Change the command to run the server from 'npx babel-node src/server' to 'npx nodemon --exec npx babel-node src/server.js'. I created a 'start' command in the package.json so that I will only hit 'npm start' in the ommand line to start the server.
+
+@1:57:30, Continue writing endpoints, Fourth endpoint for adding an item on a cart, which the client will send a req.body
+
+@2:00:10, Fifth endpoint is for removing items in the cart
