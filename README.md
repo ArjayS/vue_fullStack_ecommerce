@@ -109,4 +109,4 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 @2:02:00, Testing the two new routes (adding and removing an item) in postman
 
-@2:03:30, Talking about and installing MongoDB
+@2:03:30, Talking about and installing MongoDB. Was able to install mongoDB in wsl2 though this link: https://dev.to/seanwelshbrown/installing-mongodb-on-windows-subsystem-for-linux-wsl-2-19m9
