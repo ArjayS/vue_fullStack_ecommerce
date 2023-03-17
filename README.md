@@ -119,3 +119,21 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 > show dbs ---> Shows all the database in the system
 > use vue-db-ecommerce ---> Creates a database in the system
+
+@2:10:30, Putting the data in the db one-by-one because the mongo shell does not like to put all the array of products object at once. Basic steps are below,
+
+> db.products.insertMany([{
+
+    id: "123",
+    name: "Running Shoes",
+    price: "60.00",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel enim quam. Mauris nisl tellus, fringilla sed cursus eu, convallis non diam. Mauris quis fringilla nunc. Aenean leo lacus, lobortis sit amet venenatis a, aliquet tristique erat. Etiam laoreet mauris ut dapibus tincidunt. Pellentesque non ex at nisl ornare aliquam sed non ante. Nam lobortis magna id massa cursus, sit amet condimentum metus facilisis. Donec eu tortor at est tempor cursus et sed velit. Morbi rutrum elementum est vitae fringilla. Phasellus dignissim purus turpis, ac varius enim auctor vulputate. In ullamcorper vestibulum mauris. Nulla malesuada pretium mauris, lobortis eleifend dolor iaculis vitae.",
+    imageUrl: "/images/shoes-1.jpg",
+    averageRating: "5.0",
+
+}]) ---> The `.products` is the collection within the 'vue-db-ecommerce' database that we would want to insert the object data into. Paste each object one-by-one with a comma in-between and close it all off with a `])`
+
+> show collections ---> which will initiate by showing us that we have only a 'products' collections. And then we type,
+> db.products.find({}) ---> which will show us what is inside products
+> db.products.find({}).pretty() ---> which will show us a more organze version of products
