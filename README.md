@@ -109,4 +109,10 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 @2:02:00, Testing the two new routes (adding and removing an item) in postman
 
-@2:03:30, Talking about and installing MongoDB. Was able to install mongoDB in wsl2 though this link: https://dev.to/seanwelshbrown/installing-mongodb-on-windows-subsystem-for-linux-wsl-2-19m9
+@2:03:30, Talking about and installing MongoDB. Was able to install mongoDB in wsl2 though this link: https://dev.to/seanwelshbrown/installing-mongodb-on-windows-subsystem-for-linux-wsl-2-19m9. Two terminals are needed, FIRST terminal is to run `mongod` and the SECOND terminal is to run `mongo` <- it is the shell of mongodb
+
+@2:08:00, Showing the commands to run the mongodb. The DOCS to learn more about the mongoDB commands: https://docs.mongodb.com
+
+@2:08:20, Commands and guide to create our ecommerce database,
+
+- @2:08:25, Creating a new database for our backend
