@@ -135,5 +135,26 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 }]) ---> The `.products` is the collection within the 'vue-db-ecommerce' database that we would want to insert the object data into. Paste each object one-by-one with a comma in-between and close it all off with a `])`
 
 > show collections ---> which will initiate by showing us that we have only a 'products' collections. And then we type,
-> db.products.find({}) ---> which will show us what is inside products
-> db.products.find({}).pretty() ---> which will show us a more organze version of products
+> db.products.find({}) ---> which will show us what is inside the 'products' collection
+> db.products.find({}).pretty() ---> which will show us a more organze version of the 'products' collection
+
+@2:12:05, For the Product section in our client: Searching for a criteria within the 'products' collection,
+
+> db.products.find({ id:'123' }).pretty() ---> Searching id: 123 within the 'products' collection
+> db.products.findOne({ id:'123' }) ---> Searching at-most, one product within our query
+
+@2:13:20, For the Shopping Cart section in our client: Assigning one user
+
+> db.users.insertOne({ ---> Inserting the 'users' collection in our database, vue-db-ecommerce.
+> ... id: '12345',
+> ... cartItems: [
+>
+> > ... '123',
+> > ... '234',
+> > ... '456',
+> > ... ]
+> > ... })
+
+> ^C ---> Typing CTRL + C to exit the mongodb shell, mongo
+
+@2:14:30, Incorporating MongoDB within our Express Server in src/server.js
