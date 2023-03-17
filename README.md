@@ -115,4 +115,7 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 @2:08:20, Commands and guide to create our ecommerce database,
 
-- @2:08:25, Creating a new database for our backend
+- @2:08:25, Creating a new database for our backend,:
+
+> show dbs ---> Shows all the database in the system
+> use vue-db-ecommerce ---> Creates a database in the system
