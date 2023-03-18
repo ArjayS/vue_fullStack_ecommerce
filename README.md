@@ -157,4 +157,4 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 > ^C ---> Typing CTRL + C to exit the mongodb shell, mongo
 
-@2:14:30, Incorporating MongoDB within our Express Server in src/server.js
+@2:14:30, Incorporating MongoDB within our Express Server in src/server.js.
