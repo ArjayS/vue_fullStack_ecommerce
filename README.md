@@ -157,4 +157,5 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 > ^C ---> Typing CTRL + C to exit the mongodb shell, mongo
 
-@2:14:30, Incorporating MongoDB within our Express Server in src/server.js.
+@2:14:30, Incorporating MongoDB within our Express Server in src/server.js. We will install the mongodb driver in our porject on our back-end server directory (package.json).
+`npm install mongodb` <--- this package will allow us to 'connect to' and 'modify' our local database from inside our express server code, making our data more persistent.
