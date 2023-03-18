@@ -160,4 +160,6 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @2:14:30, Incorporating MongoDB within our Express Server in src/server.js. We will install the `mongodb driver` in our porject on our back-end server directory (package.json).
 `npm install mongodb` <--- this package will allow us to 'connect to' and 'modify' our local database from inside our express server code, making our data more persistent.
 
-@2:15:45, Moifying the get route and connecting express to the mongodb driver. Adding an asynchronous code.
+@2:15:45, Modifying the get route and connecting express to the mongodb driver. Adding an asynchronous code, and the remaining code to properly setup the communication with the running mongodb.
+
+@2:19:25, Now testing the connection with the running backend server and the running mongodb client.
