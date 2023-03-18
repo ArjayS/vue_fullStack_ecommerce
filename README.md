@@ -163,3 +163,5 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @2:15:45, Modifying the get route and connecting express to the mongodb driver. Adding an asynchronous code, and the remaining code to properly setup the communication with the running mongodb.
 
 @2:19:25, Now testing the connection with the running backend server (TERMINA 1: server.js - `npm start`) and the running mongodb client (TERMINAL 2: mongod). We will use Postman to run a GET request to our server.
+
+@2:20:00, (EXERCISE FILES > CH03 > 02_04 > Start) -> Converting the next 2 GET request from postman to have the server.js (back-end) communicate with the mongoDB: Route: `/api/users/:userId/cart`, and `/api/products/:productId`
