@@ -142,6 +142,7 @@ app.get("/api/products", async (req, res) => {
   });
 
   const db = client.db("vue-db-ecommerce");
+
   const products = await db.collection("products").find({}).toArray();
 
   res.status(200).json(products);
@@ -150,8 +151,26 @@ app.get("/api/products", async (req, res) => {
 });
 
 // @1:48:30, Second endpoint for getting all of a specific users cart products
-app.get("/api/users/:userId/cart", (req, res) => {
+app.get("/api/users/:userId/cart", async (req, res) => {
+  // @2:20:00 connecting and communcating with mongoDB
+  const client = await MongoClient.connect("mongodb://localhost:27017", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+
+  const db = client.db("vue-db-ecommerce");
+
+  const user = await db.user("users").findOne({ id: userId });
+  if (!user) return res.status(404).json("Could not find user");
+  const products = await db.collection("products").find({}).toArray();
+  const cartItemIds = user.cartItems;
+  const cartItems = cartItemIds.map((id) =>
+    products.find((product) => product.id === id)
+  );
+
   res.status(200).json(cartItems);
+
+  client.close();
 });
 
 // @1:51:00, Third endpoint for getting a single specific products
