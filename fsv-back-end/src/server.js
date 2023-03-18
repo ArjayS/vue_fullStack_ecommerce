@@ -133,8 +133,10 @@ app.get("/hello/:name", (req, res) => {
 });
 
 // @1:48:30, First endpoint for getting all the products
-app.get("/api/products", (req, res) => {
+app.get("/api/products", async (req, res) => {
   res.status(200).json(products);
+
+  // @2:15:45, Adding an asynchronous code to connect to the mongodb driver
 });
 
 // @1:48:30, Second endpoint for getting all of a specific users cart products
