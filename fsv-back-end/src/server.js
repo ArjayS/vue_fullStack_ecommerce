@@ -153,6 +153,8 @@ app.get("/api/products", async (req, res) => {
 // @1:48:30, Second endpoint for getting all of a specific users cart products
 app.get("/api/users/:userId/cart", async (req, res) => {
   // @2:20:00 connecting and communcating with mongoDB
+  const { userId } = req.params;
+
   const client = await MongoClient.connect("mongodb://localhost:27017", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -160,7 +162,7 @@ app.get("/api/users/:userId/cart", async (req, res) => {
 
   const db = client.db("vue-db-ecommerce");
 
-  const user = await db.user("users").findOne({ id: userId });
+  const user = await db.collection("users").findOne({ id: userId });
   if (!user) return res.status(404).json("Could not find user");
   const products = await db.collection("products").find({}).toArray();
   const cartItemIds = user.cartItems;
