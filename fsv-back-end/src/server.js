@@ -1,5 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
+import { MongoClient } from "mongodb";
 
 const products = [
   {
@@ -134,9 +135,18 @@ app.get("/hello/:name", (req, res) => {
 
 // @1:48:30, First endpoint for getting all the products
 app.get("/api/products", async (req, res) => {
+  // @2:15:45, Adding an asynchronous code to connect to the mongodb driver
+  const client = await MongoClient.connect("mongodb://localhost:27017", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+
+  const db = client.db("vue-db-ecommerce");
+  const products = await db.collection("products").find({}).toArray();
+
   res.status(200).json(products);
 
-  // @2:15:45, Adding an asynchronous code to connect to the mongodb driver
+  client.close();
 });
 
 // @1:48:30, Second endpoint for getting all of a specific users cart products
