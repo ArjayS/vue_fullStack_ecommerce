@@ -184,4 +184,8 @@ in vscode during work, use 'yarn dev' to run the app and see the website
   })
 - axios.delete(...)
 
-@2:40:00, (EXERCISE FILES > CH04 > 04_02 > Start) Updating the front-end (client) to have it connect with the backend (server). Installing axios, `npm install axios`
+@2:40:00, (EXERCISE FILES > CH04 > 04_02 > Start) Updating the front-end (client) to have it connect with the backend (server). Installing axios, `npm install axios` and using it to the ProductsPage.vue, ProductDetailPage.vue, and CartPage.vue
+
+@2:41:15, Using Axios in the ProductsPage.vue view page. Introducing a function called created() which is a lifecycle method. This created() function will allow us to call a piece of code that makes request to our server and set the priducts data appropriately when the page loads properly
+
+@2:45:00 After looking at the console and seeing the GET reqeust from our Axios call is not working in our front-end, we will need to install CORS. CORS is a security related error that our app is throwing for us in an attempt to be helpful; This happens when our front end is making a request to some endpoint on a different origin than itself. If we install CORS `npm install CORS`, we will be able to make our front-end(client) and back-end (server) think that they are running on the same origin
