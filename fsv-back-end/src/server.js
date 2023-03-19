@@ -144,7 +144,9 @@ app.get("/api/products", async (req, res) => {
   });
   const db = client.db("vue-db-ecommerce");
 
+  // MongoDB GET logic for the route: /api/products
   const products = await db.collection("products").find({}).toArray();
+  // MongoDB GET logic for the route: /api/products
 
   res.status(200).json(products);
 
@@ -163,6 +165,7 @@ app.get("/api/users/:userId/cart", async (req, res) => {
   });
   const db = client.db("vue-db-ecommerce");
 
+  // MongoDB GET logic for the route: /api/users/:userId/cart
   const user = await db.collection("users").findOne({ id: userId });
   if (!user) return res.status(404).json("Could not find user");
   const products = await db.collection("products").find({}).toArray();
@@ -170,6 +173,7 @@ app.get("/api/users/:userId/cart", async (req, res) => {
   const cartItems = cartItemIds.map((id) =>
     products.find((product) => product.id === id)
   );
+  // MongoDB GET logic for the route: /api/users/:userId/cart
 
   res.status(200).json(cartItems);
 
@@ -190,13 +194,14 @@ app.get("/api/products/:productId", async (req, res) => {
 
   // const product = products.find((product) => product.id === productId); <--- This corresponds to looping over the products variable in this file, above.
 
+  // MongoDB GET logic for the route: /api/products/:productId
   const product = await db.collection("products").findOne({ id: productId });
   if (product) {
     res.status(200).json(product);
   } else {
     res.status(404).json("Could not find the product!");
   }
-  //
+  // MongoDB GET logic for the route: /api/products/:productId
 
   client.close();
 });
@@ -216,6 +221,7 @@ app.post("/api/users/:userId/cart", async (req, res) => {
 
   // const product = products.find((product) => product.id === productId); <--- This corresponds to looping over the products variable in this file, above.
 
+  // MongoDB POST logic for the route: /api/users/:userId/cart
   await db.collection("users").updateOne(
     { id: userId },
     {
@@ -228,6 +234,7 @@ app.post("/api/users/:userId/cart", async (req, res) => {
   const cartItems = cartItemIds.map((id) =>
     products.find((product) => product.id === id)
   );
+  // MongoDB POST logic for the route: /api/users/:userId/cart
 
   res.status(200).json(cartItems);
 
@@ -256,6 +263,7 @@ app.delete("/api/users/:userId/cart/:productId", async (req, res) => {
 
   // cartItems = cartItems.filter((product) => product.id !== productId); <-- This only corresponds to looping over the products variable in this file, above.
 
+  // MongoDB DELETE logic for the route: /api/users/:userId/cart/:productId
   await db.collection("users").updateOne(
     { id: userId },
     {
@@ -269,6 +277,7 @@ app.delete("/api/users/:userId/cart/:productId", async (req, res) => {
   const cartItems = cartItemIds.map((id) =>
     products.find((product) => product.id === id)
   );
+  // MongoDB DELETE logic for the route: /api/users/:userId/cart/:productId
 
   res.status(200).json(cartItems);
 
