@@ -164,4 +164,6 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 @2:19:25, Now testing the connection with the running backend server (TERMINA 1: server.js - `npm start`) and the running mongodb client (TERMINAL 2: mongod). We will use Postman to run a GET request to our server.
 
-@2:20:00, (EXERCISE FILES > CH03 > 02_04 > Start) -> Converting the next 2 GET request from postman to have the server.js (back-end) communicate with the mongoDB: Route: `/api/users/:userId/cart`, and `/api/products/:productId`
+@2:20:00, (EXERCISE FILES > CH03 > 02_04 > Start) -> Converting the next 2 GET request from postman to have the server.js (back-end) communicate with the mongoDB: Route: `/api/users/:userId/cart`, and `/api/products/:productId`. Working with the `/api/users/:userId/cart` route
+
+@2:25:00, Working with the `/api/products/:productId` route. similar to the second GET route.
