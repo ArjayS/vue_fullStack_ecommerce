@@ -169,3 +169,5 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @2:25:00, Working with the `/api/products/:productId` route. similar to the second GET route.
 
 @2:27:05, (EXERCISE FILES > CH03 > 03_05 > Start) -> Converting and connecting the 'adding items to a users cart' endpoint (POST request) to the mongoDB
+
+@2:31:20, (EXERCISE FILES > CH03 > 03_06 > Start) -> Converting and connecting the ' removing items to a users cart' endpoint (DELETE request) to the mongoDB
