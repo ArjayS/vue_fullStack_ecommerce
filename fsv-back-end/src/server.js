@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { MongoClient } from "mongodb";
+import path from "path";
 
 // @2:47:45 - Commenting this fake data out
 // const products = [
@@ -113,11 +114,12 @@ import { MongoClient } from "mongodb";
 //     averageRating: "5.0",
 //   },
 // ];
-
-export let cartItems = [products[0], products[2], products[3]];
+// export let cartItems = [products[0], products[2], products[3]];
 
 const app = express();
 app.use(bodyParser.json());
+
+app.use("/images", express.static(path.join(__dirname, "../assets")));
 
 // From Postman activating the res.send through a GET request of localhost:8000/hello
 app.get("/hello", (req, res) => {
