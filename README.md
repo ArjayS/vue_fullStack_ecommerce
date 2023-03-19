@@ -171,3 +171,7 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @2:27:05, (EXERCISE FILES > CH03 > 03_05 > Start) -> Converting and connecting the 'adding items to a users cart' endpoint (POST request) to the mongoDB
 
 @2:31:20, (EXERCISE FILES > CH03 > 03_06 > Start) -> Converting and connecting the ' removing items to a users cart' endpoint (DELETE request) to the mongoDB
+
+@2:35:50, Quick summary of using MongoDB basics that we have implemented for this project and other SQL benefits and possiblities for FUTURE application
+
+@2:36:30, Learning about Axios. Axios is a LIBRARY and a way for the CLIENT to communicate with the SERVER to retrieve, edit, add, and delete data to the backend.
