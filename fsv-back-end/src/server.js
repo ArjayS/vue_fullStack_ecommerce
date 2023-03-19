@@ -136,11 +136,12 @@ app.get("/hello/:name", (req, res) => {
 // @1:48:30, First endpoint for getting all the products
 app.get("/api/products", async (req, res) => {
   // @2:15:45, Adding an asynchronous code to connect to the mongodb driver
+
+  // Connection to mongoDB logic
   const client = await MongoClient.connect("mongodb://localhost:27017", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-
   const db = client.db("vue-db-ecommerce");
 
   const products = await db.collection("products").find({}).toArray();
@@ -152,14 +153,14 @@ app.get("/api/products", async (req, res) => {
 
 // @1:48:30, Second endpoint for getting all of a specific users cart products
 app.get("/api/users/:userId/cart", async (req, res) => {
-  // @2:20:00 connecting and communcating with mongoDB
+  // @2:20:00 working with the `/api/users/:userId/cart` route, and connecting and communcating with mongoDB
   const { userId } = req.params;
 
+  // Connection to mongoDB logic
   const client = await MongoClient.connect("mongodb://localhost:27017", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-
   const db = client.db("vue-db-ecommerce");
 
   const user = await db.collection("users").findOne({ id: userId });
@@ -176,14 +177,27 @@ app.get("/api/users/:userId/cart", async (req, res) => {
 });
 
 // @1:51:00, Third endpoint for getting a single specific products
-app.get("/api/products/:productId", (req, res) => {
+app.get("/api/products/:productId", async (req, res) => {
+  // 2:25:00, working with the `/api/products/:productId` route, and connecting and communicating with mongoDB
   const { productId } = req.params;
-  const product = products.find((product) => product.id === productId);
+
+  // Connection to mongoDB logic
+  const client = await MongoClient.connect("mongodb://localhost:27017", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  const db = client.db("vue-db-ecommerce");
+
+  // const product = products.find((product) => product.id === productId); <--- This corresponds to looping over the products variable in this file.
+
+  const product = await db.collection("products").findOne({ id: productId });
   if (product) {
     res.status(200).json(product);
   } else {
     res.status(404).json("Could not find the product!");
   }
+
+  client.close();
 });
 
 // @1:57:30, Fourth endpoint for adding an item on a cart, which the client will send a req.body
