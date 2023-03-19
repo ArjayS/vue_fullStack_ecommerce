@@ -201,15 +201,44 @@ app.get("/api/products/:productId", async (req, res) => {
 });
 
 // @1:57:30, Fourth endpoint for adding an item on a cart, which the client will send a req.body
-app.post("/api/users/:userId/cart", (req, res) => {
+app.post("/api/users/:userId/cart", async (req, res) => {
+  // 2:27:05, Adding the logic to connect and communicate with the mongoDB for this POST request
+  const { userId } = req.params;
   const { productId } = req.body;
-  const product = products.find((product) => product.id === productId);
-  if (product) {
-    cartItems.push(product);
-    res.status(200).json(cartItems);
-  } else {
-    res.status(404).json("Could not find the product!");
-  }
+
+  // Connection to mongoDB logic
+  const client = await MongoClient.connect("mongodb://localhost:27017", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  const db = client.db("vue-db-ecommerce");
+
+  // const product = products.find((product) => product.id === productId); <--- This corresponds to looping over the products variable in this file.
+
+  await db.collection("users").updateOne(
+    { id: userId },
+    {
+      $addToSet: { cartItems: productId },
+    }
+  );
+
+  const user = await db.collection("users").findOne({ id: userId });
+  const cartItemIds = user.cartItems;
+  const cartItems = cartItemIds.map((id) =>
+    products.find((product) => product.id === id)
+  );
+
+  res.status(200).json(cartItems);
+
+  // Old logic below only corresponds to the data above
+  // if (product) {
+  //   cartItems.push(product);
+  //   res.status(200).json(cartItems);
+  // } else {
+  //   res.status(404).json("Could not find the product!");
+  // }
+
+  client.close();
 });
 
 // @2:00:10, Fifth endpoint is for removing item in the cart
