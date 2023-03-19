@@ -188,7 +188,7 @@ app.get("/api/products/:productId", async (req, res) => {
   });
   const db = client.db("vue-db-ecommerce");
 
-  // const product = products.find((product) => product.id === productId); <--- This corresponds to looping over the products variable in this file.
+  // const product = products.find((product) => product.id === productId); <--- This corresponds to looping over the products variable in this file, above.
 
   const product = await db.collection("products").findOne({ id: productId });
   if (product) {
@@ -196,6 +196,7 @@ app.get("/api/products/:productId", async (req, res) => {
   } else {
     res.status(404).json("Could not find the product!");
   }
+  //
 
   client.close();
 });
@@ -213,7 +214,7 @@ app.post("/api/users/:userId/cart", async (req, res) => {
   });
   const db = client.db("vue-db-ecommerce");
 
-  // const product = products.find((product) => product.id === productId); <--- This corresponds to looping over the products variable in this file.
+  // const product = products.find((product) => product.id === productId); <--- This corresponds to looping over the products variable in this file, above.
 
   await db.collection("users").updateOne(
     { id: userId },
@@ -242,10 +243,36 @@ app.post("/api/users/:userId/cart", async (req, res) => {
 });
 
 // @2:00:10, Fifth endpoint is for removing item in the cart
-app.delete("/api/users/:userId/cart/:productId", (req, res) => {
-  const { productId } = req.params;
-  cartItems = cartItems.filter((product) => product.id !== productId);
+app.delete("/api/users/:userId/cart/:productId", async (req, res) => {
+  // @2:31:20, Adding the logic to connect and communicate with the mongoDB for this DELETE request
+  const { userId, productId } = req.params;
+
+  // Connection to mongoDB logic
+  const client = await MongoClient.connect("mongodb://localhost:27017", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  const db = client.db("vue-db-ecommerce");
+
+  // cartItems = cartItems.filter((product) => product.id !== productId); <-- This only corresponds to looping over the products variable in this file, above.
+
+  await db.collection("users").updateOne(
+    { id: userId },
+    {
+      $pull: { cartItems: productId },
+    }
+  );
+
+  const user = await db.collection("users").findOne({ id: userId });
+  const products = await db.collection("products").find({}).toArray();
+  const cartItemIds = user.cartItems;
+  const cartItems = cartItemIds.map((id) =>
+    products.find((product) => product.id === id)
+  );
+
   res.status(200).json(cartItems);
+
+  client.close();
 });
 
 // Server listening to PORT = 8000
