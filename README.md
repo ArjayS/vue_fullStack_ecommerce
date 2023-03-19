@@ -175,3 +175,13 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @2:35:50, Quick summary of using MongoDB basics that we have implemented for this project and other SQL benefits and possiblities for FUTURE application
 
 @2:36:30, Learning about Axios. Axios is a LIBRARY and a way for the CLIENT to communicate with the SERVER to retrieve, edit, add, and delete data to the backend.
+
+@2:37:20, Axios Methods,
+
+- axios.get('api.site.com/some/path')
+- axios.post('some url', {
+  message: 'hello',
+  })
+- axios.delete(...)
+
+@2:40:00, (EXERCISE FILES > CH04 > 04_02 > Start) Updating the front-end (client) to have it connect with the backend (server). Installing axios, `npm install axios`
