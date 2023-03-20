@@ -10,6 +10,7 @@ import axios from "axios";
 
 // import { products } from "../fake-data"; <--- Using the fake-data.js file
 import ProductsGrid from "../components/ProductsGrid.vue";
+
 export default {
   name: "ProductsPage",
   components: {
@@ -20,10 +21,13 @@ export default {
       products: [],
     };
   },
+
+  // @2:41:15, Specific code using Axios Call
   async created() {
     const result = await axios.get("/api/products");
     const products = result.data;
     this.products = products;
   },
+  // @2:41:15, Specific code using Axios Call
 };
 </script>
