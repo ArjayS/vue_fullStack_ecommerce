@@ -16,7 +16,10 @@
 </template>
 
 <script>
-import { products } from "../fake-data";
+// @2:49:10, Working on the ProductDetailPage.vue and using axios
+import axios from "axios";
+
+// import { products } from "../fake-data"; <--- Using the fake-data.js file
 import NotFoundPage from "./NotFoundPage";
 export default {
   name: "ProductDetailPage",
@@ -26,8 +29,16 @@ export default {
   data() {
     return {
       // specifically looking for the exactid for the specific item :id
-      product: products.find((p) => p.id === this.$route.params.id),
+      // product: products.find((p) => p.id === this.$route.params.id), <--- Using the fake-data.js file
+
+      product: {},
     };
+  },
+  async created() {
+    // @2:50:00, Applying the Axios logic
+    const result = await axios.get(`/api/products/${this.$route.params.id}`);
+    const product = result.data;
+    this.product = product;
   },
 };
 </script>
