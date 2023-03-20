@@ -193,3 +193,5 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 @2:49:00, Was not able to load images properly!
 
 @2:49:10, (EXERCISE FILES > CH04 > 04_03 > Start) Working on the 'ProductDetailPage.vue' using axios.
+
+@2:51:30, (EXERCISE FILES > CH04 > 04_03 > Start) Working on the 'CartPage.vue' using axios.
