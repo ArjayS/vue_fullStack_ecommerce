@@ -8,7 +8,10 @@
 </template>
 
 <script>
-import { cartItems } from "../fake-data";
+// @2:51:30, Working on the 'CartPage.vue' using axios.
+import axios from "axios";
+
+// import { cartItem } from "../fake-data"; <--- Using the fake-data.js file
 import ProductsList from "../components/ProductsList.vue";
 
 export default {
@@ -18,13 +21,21 @@ export default {
   },
   data() {
     return {
-      cartItems,
+      // cartItems,
+      cartItems: [],
     };
   },
   computed: {
     totalPrice() {
       return this.cartItems.reduce((sum, item) => sum + Number(item.price), 0);
     },
+  },
+
+  // @2:52:00, Applying Axios Logic
+  async created() {
+    const result = await axios.get("/api/users/12345/cart");
+    const cartItems = result.data;
+    this.cartItems = cartItems;
   },
 };
 </script>
