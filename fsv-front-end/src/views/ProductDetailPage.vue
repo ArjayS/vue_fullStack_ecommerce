@@ -7,7 +7,7 @@
       <h1>{{ product.name }}</h1>
       <h3 id="price">{{ product.price }}</h3>
       <p>Average Rating: {{ product.averageRating }}</p>
-      <button id="add-to-cart">Add to Cart</button>
+      <button id="add-to-cart" v-on:click="addToCart">Add to Cart</button>
       <h4>Description</h4>
       <p>{{ product.description }}</p>
     </div>
@@ -34,6 +34,16 @@ export default {
       product: {},
     };
   },
+
+  // @2:54:00, Adding events to be able to make POST call using Axios. 'v-on:click="addToCart"'
+  methods: {
+    async addToCart() {
+      await axios.post("/api/users/12345/cart", {
+        productId: this.$route.params.id,
+      });
+    },
+  },
+  // @2:54:00, Adding events to be able to make POST call using Axios
 
   // @2:50:00, Applying the Axios logic
   async created() {
