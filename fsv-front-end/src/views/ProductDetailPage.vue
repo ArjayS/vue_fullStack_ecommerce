@@ -34,12 +34,14 @@ export default {
       product: {},
     };
   },
+
+  // @2:50:00, Applying the Axios logic
   async created() {
-    // @2:50:00, Applying the Axios logic
     const result = await axios.get(`/api/products/${this.$route.params.id}`);
     const product = result.data;
     this.product = product;
   },
+  // @2:50:00, Applying the Axios logic
 };
 </script>
 
