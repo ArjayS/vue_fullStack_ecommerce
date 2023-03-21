@@ -37,5 +37,6 @@ export default {
     const cartItems = result.data;
     this.cartItems = cartItems;
   },
+  // @2:52:00, Applying Axios Logic
 };
 </script>
