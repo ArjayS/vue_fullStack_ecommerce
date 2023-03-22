@@ -190,6 +190,8 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 @2:45:00 After looking at the console and seeing the GET reqeust from our Axios call is not working in our front-end, we will need to install CORS. CORS is a security related error that our app is throwing for us in an attempt to be helpful; This happens when our front end is making a request to some endpoint on a different origin than itself. By adding a 'proxy' in the vue.config.js, ee will be able to make our front-end(client) and back-end (server) think that they are running on the same origin. Guide on how to make this work!
 
+**NOTE: https://www.youtube.com/watch?v=J01rYl9T3BU @3:30:00**
+
 @2:49:00, Was not able to load images properly!
 
 @2:49:10, (EXERCISE FILES > CH04 > 04_03 > Start) Working on the 'ProductDetailPage.vue' using axios.
