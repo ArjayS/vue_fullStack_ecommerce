@@ -200,4 +200,4 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 @2:54:00, (EXERCISE FILES > CH04 > 04_04 > Start) Working on the next two endpoints, The 'Add to Cart' and the 'Remove to Cart' using Axios logic. The way we will do it is by creating events in the client.
 
-@2:58:20, (EXERCISE FILES > CH04 > 04_05 > Start) Adding more styling to the user interface.
+@2:58:20, (EXERCISE FILES > CH04 > 04_05 > Start), Adding more styling to the user interface.
