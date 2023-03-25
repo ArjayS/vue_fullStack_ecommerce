@@ -7,7 +7,16 @@
       <h1>{{ product.name }}</h1>
       <h3 id="price">{{ product.price }}</h3>
       <p>Average Rating: {{ product.averageRating }}</p>
-      <button id="add-to-cart" v-on:click="addToCart">Add to Cart</button>
+      <button
+        id="add-to-cart"
+        v-on:click="addToCart"
+        v-if="!showSuccessMessage"
+      >
+        Add to Cart
+      </button>
+      <button id="add-to-cart" class="green-button" v-if="showSuccessMessage">
+        Successfully added item to cart!
+      </button>
       <h4>Description</h4>
       <p>{{ product.description }}</p>
     </div>
@@ -32,6 +41,9 @@ export default {
       // product: products.find((p) => p.id === this.$route.params.id), <--- Using the fake-data.js file
 
       product: {},
+
+      // @2:58:00, Adding styling to the user interface
+      showSuccessMessage: false,
     };
   },
 
@@ -41,6 +53,12 @@ export default {
       await axios.post("/api/users/12345/cart", {
         productId: this.$route.params.id,
       });
+
+      // @2:58:00, Adding styling to the user interface
+      this.showSuccessMessage = true;
+      setTimeout(() => {
+        this.$router.push("/products");
+      }, 1500);
     },
   },
   // @2:54:00, Adding events to be able to make POST call using Axios
@@ -83,5 +101,9 @@ img {
   position: absolute;
   top: 24px;
   right: 16px;
+}
+
+.green-button {
+  background-color: green;
 }
 </style>
