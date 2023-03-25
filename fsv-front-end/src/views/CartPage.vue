@@ -33,7 +33,9 @@ export default {
 
   // @2:52:00, Applying Axios Logic
   async created() {
-    const result = await axios.get("/api/users/12345/cart");
+    const result = await axios.get(
+      "http://localhost:8000/api/users/12345/cart"
+    );
     const cartItems = result.data;
     this.cartItems = cartItems;
   },
