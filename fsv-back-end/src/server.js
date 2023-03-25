@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import bodyParser from "body-parser";
 import { MongoClient } from "mongodb";
 import path from "path";
@@ -118,6 +119,9 @@ import path from "path";
 
 const app = express();
 app.use(bodyParser.json());
+
+app.use(cors());
+app.use(express.json());
 
 app.use("/images", express.static(path.join(__dirname, "../assets")));
 
