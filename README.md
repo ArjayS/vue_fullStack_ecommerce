@@ -198,6 +198,13 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 @2:51:30, (EXERCISE FILES > CH04 > 04_03 > Start) Working on the 'CartPage.vue' using axios.
 
-@2:54:00, (EXERCISE FILES > CH04 > 04_04 > Start) Working on the next two endpoints, The 'Add to Cart' and the 'Remove to Cart' using Axios logic. The way we will do it is by creating events in the client.
+@2:54:00, (EXERCISE FILES > CH04 > 04_04 > Start) Working on the next two endpoints, The 'Add to Cart' and the 'Remove to Cart' using Axios logic. The way we will do it is by creating events in the client. **Still not working properly** <-> **Was able to fix it by adding the lines of code below: at app.post by defining products**
+
+` if (!user) return res.status(404).json("Could not find user");
+  const products = await db.collection("products").find({}).toArray();`
 
 @2:58:20, (EXERCISE FILES > CH04 > 04_05 > Start), Adding more styling to the user interface.
+
+@3:04:00, (EXERCISE FILES > CH04 > 04_06 > Start), Adding the 'Remove item from cart' -> app.delete request
+
+@3:10:00, CHALLENGE portion
