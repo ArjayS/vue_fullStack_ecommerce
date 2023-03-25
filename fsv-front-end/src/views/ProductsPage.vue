@@ -24,7 +24,7 @@ export default {
 
   // @2:41:15, Specific code using Axios Call
   async created() {
-    const result = await axios.get("/api/products");
+    const result = await axios.get("http://localhost:8000/api/products");
     const products = result.data;
     this.products = products;
   },
