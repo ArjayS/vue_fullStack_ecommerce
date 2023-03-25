@@ -123,7 +123,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
 
-app.use("/images", express.static(path.join(__dirname, "../assets")));
+app.use("/images", express.static(path.join(__dirname, "../images")));
 
 // From Postman activating the res.send through a GET request of localhost:8000/hello
 app.get("/hello", (req, res) => {
