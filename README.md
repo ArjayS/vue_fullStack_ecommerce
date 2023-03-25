@@ -207,4 +207,4 @@ in vscode during work, use 'yarn dev' to run the app and see the website
 
 @3:04:00, (EXERCISE FILES > CH04 > 04_06 > Start), Adding the 'Remove item from cart' -> app.delete request
 
-@3:10:00, CHALLENGE portion
+@3:10:00, (EXERCISE FILES > CH04 > 04_07 > Start) CHALLENGE portion
