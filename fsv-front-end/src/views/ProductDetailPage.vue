@@ -47,9 +47,7 @@ export default {
 
   // @2:50:00, Applying the Axios logic
   async created() {
-    const result = await axios.get(
-      `http://localhost:8000/api/products/${this.$route.params.id}`
-    );
+    const result = await axios.get(`/api/products/${this.$route.params.id}`);
     const product = result.data;
     this.product = product;
   },
