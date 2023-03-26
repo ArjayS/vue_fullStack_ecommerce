@@ -10,12 +10,19 @@
       <button
         id="add-to-cart"
         v-on:click="addToCart"
-        v-if="!showSuccessMessage"
+        v-if="!showSuccessMessage && !itemIsInCart"
       >
         Add to Cart
       </button>
-      <button id="add-to-cart" class="green-button" v-if="showSuccessMessage">
+      <button
+        id="add-to-cart"
+        class="green-button"
+        v-if="showSuccessMessage && !itemIsInCart"
+      >
         Successfully added item to cart!
+      </button>
+      <button id="add-to-cart" class="grey-button" v-if="itemIsInCart">
+        Item is already in cart
       </button>
       <h4>Description</h4>
       <p>{{ product.description }}</p>
@@ -44,8 +51,19 @@ export default {
 
       // @2:58:00, Adding styling to the user interface
       showSuccessMessage: false,
+
+      // 3:10:00 CHALLENGE 2 Solution
+      cartItems: [],
     };
   },
+
+  // 3:10:00 CHALLENGE 2 Solution
+  computed: {
+    itemIsInCart() {
+      return this.cartItems.some((item) => item.id === this.product.id);
+    },
+  },
+  // 3:10:00 CHALLENGE 2 Solution
 
   // @2:54:00, Adding events to be able to make POST call using Axios. 'v-on:click="addToCart"'
   methods: {
@@ -63,13 +81,24 @@ export default {
   },
   // @2:54:00, Adding events to be able to make POST call using Axios
 
-  // @2:50:00, Applying the Axios logic
   async created() {
-    const result = await axios.get(`/api/products/${this.$route.params.id}`);
-    const product = result.data;
+    //// @2:50:00, Applying the Axios logic
+
+    // const result = await axios.get(`/api/products/${this.$route.params.id}`);
+    // const product = result.data;
+
+    // SIMILAR AS ABOVE TWO LINE OF CODE
+    const { data: product } = await axios.get(
+      `/api/products/${this.$route.params.id}`
+    );
     this.product = product;
+    //// @2:50:00, Applying the Axios logic
+
+    //// 3:10:00 CHALLENGE 2 Solution
+    const { data: cartItems } = await axios.get(`/api/users/12345/cart`);
+    this.cartItems = cartItems;
+    //// 3:10:00 CHALLENGE 2 Solution
   },
-  // @2:50:00, Applying the Axios logic
 };
 </script>
 
@@ -105,5 +134,8 @@ img {
 
 .green-button {
   background-color: green;
+}
+.grey-button {
+  background-color: #888;
 }
 </style>
